@@ -1,0 +1,84 @@
+:root {
+  --marquee-width: 100vw;
+  --marquee-height: 15vh;
+  /* --marquee-elements: 12; */ /* defined with JavaScript */
+  --marquee-elements-displayed: 6;
+  --marquee-element-width: calc(
+    var(--marquee-width) / var(--marquee-elements-displayed)
+  );
+  --marquee-animation-duration: calc(var(--marquee-elements) * 4s);
+}
+
+@media (max-width: 1072px) {
+  :root {
+    --marquee-elements-displayed: 5;
+  }
+}
+
+@media (max-width: 762px) {
+  :root {
+    --marquee-elements-displayed: 4;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --marquee-elements-displayed: 2;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #000317;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.noise::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.1;
+  pointer-events: none;
+  background: url(/src/assets/noise.gif);
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
